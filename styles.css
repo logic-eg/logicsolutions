@@ -919,12 +919,12 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-#valued-partners {
+#clients {
   margin: 3rem 0;
   text-align: center;
 }
 
-#valued-partners h2 {
+#clients h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
   color: #235081; /* Brand blue or your accent */
