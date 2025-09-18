@@ -51,6 +51,14 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', function() {
                 mobileMenuBtn.classList.remove('active');
                 mobileNav.classList.remove('active');
+                // Show hamburger icon after closing menu
+                menuIcon.innerHTML = `
+                    <svg width="32" height="32" viewBox="0 0 16 16" fill="none">
+                        <rect y="4" width="16" height="2" rx="1" fill="#222F36"/>
+                        <rect y="7" width="16" height="2" rx="1" fill="#222F36"/>
+                        <rect y="10" width="16" height="2" rx="1" fill="#222F36"/>
+                    </svg>
+                `;
             });
         });
     }
