@@ -1117,3 +1117,11 @@ html {
         scroll-behavior: auto;
     }
 }
+
+@media (max-width: 767px) {
+  .partners-list {
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+  }
+}
