@@ -7,14 +7,43 @@ function hideLoader() {
 
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileNav = document.getElementById('mobileNav');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const menuIcon = mobileMenuBtn.querySelector('.menu-icon');
+        const mobileNav = document.getElementById('mobileNav');
     
     if (mobileMenuBtn && mobileNav) {
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenuBtn.classList.toggle('active');
-            mobileNav.classList.toggle('active');
+        mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuBtn.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+            
+        if (mobileMenuBtn.classList.contains('active')) {
+                // Show SVG X icon
+                menuIcon.innerHTML = `
+                <svg width="32" height="32" viewBox="0 0 16 16" fill="none">
+                    <line x1="4" y1="4" x2="12" y2="12" stroke="#222F36" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="12" y1="4" x2="4" y2="12" stroke="#222F36" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                `;
+            } else {
+                // Show hamburger icon
+                menuIcon.innerHTML = `
+                <svg width="32" height="32" viewBox="0 0 16 16" fill="none">
+                    <rect y="4" width="16" height="2" rx="1" fill="#222F36"/>
+                    <rect y="7" width="16" height="2" rx="1" fill="#222F36"/>
+                    <rect y="10" width="16" height="2" rx="1" fill="#222F36"/>
+                </svg>
+                `;
+            }
+
         });
+
+        menuIcon.innerHTML = `
+        <svg width="32" height="32" viewBox="0 0 16 16" fill="none">
+            <rect y="4" width="16" height="2" rx="1" fill="#222F36"/>
+            <rect y="7" width="16" height="2" rx="1" fill="#222F36"/>
+            <rect y="10" width="16" height="2" rx="1" fill="#222F36"/>
+        </svg>
+        `;
         
         // Close mobile menu when clicking on a link
         const mobileLinks = mobileNav.querySelectorAll('.nav-link-mobile');
@@ -274,6 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     setHeaderHeight();
     window.addEventListener('resize', setHeaderHeight);
+
 
 });
 

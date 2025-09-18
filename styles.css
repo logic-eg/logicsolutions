@@ -129,10 +129,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 0;
+    position: relative;
 }
 
 .logo {
@@ -182,7 +179,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-menu-btn {
-    display: block;
+    position: absolute;
+    top: 0.7rem;      /* كان 1.2rem، جرب أقل */
+    right: 1rem;
+    z-index: 1100;
+    display: flex;
     background: none;
     border: none;
     cursor: pointer;
