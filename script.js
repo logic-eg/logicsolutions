@@ -144,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (response.ok) {
                     showToast('Message Sent!', "Thank you for your message. We'll get back to you soon.");
                     contactForm.reset();
+                    grecaptcha.reset();
                 } else {
                     let errorMsg = "There was a problem sending your message.";
                     const data = await response.json();
