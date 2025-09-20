@@ -1018,6 +1018,12 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.2px;
 }
 
+.g-recaptcha {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+
 /* Responsive Design */
 @media (min-width: 640px) {
     .hero-buttons {

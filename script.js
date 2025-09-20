@@ -89,6 +89,13 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
+            var recaptchaResponse = grecaptcha.getResponse();
+            if (recaptchaResponse.length === 0) {
+                showToast('Error', 'Please confirm you are not a robot.');
+                e.preventDefault();
+                return;
+            }
+
             // Honeypot anti-spam: if filled, it is a bot
             const gotcha = contactForm.querySelector('input[name="_gotcha"]');
             if (gotcha && gotcha.value.trim() !== "") {
